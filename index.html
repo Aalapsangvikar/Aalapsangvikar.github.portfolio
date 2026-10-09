@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aalap Sangviker | Data Analyst &amp; Data Science MSc</title>
+<meta name="description" content="Portfolio of Aalap Sangviker: data analyst, MSc Data Science and Statistical Learning (University of Limerick), graduating January 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<style>
+:root{
+  --bg:#F3F6FB; --surface:#FFFFFF; --ink:#0E1A2E; --muted:#58687F; --line:#DCE3EE; --soft:#EBF0F8;
+  --blue:#2F5BEA; --teal:#0E9F94; --amber:#D98A00; --coral:#E2503F; --violet:#6B4EE6;
+  --navy:#0A1730; --navy2:#13294F;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1220; --surface:#121D31; --ink:#E9EFF8; --muted:#9BAAC0; --line:#23324A; --soft:#182640;
+    --blue:#7DA0FF; --teal:#2DD4BF; --amber:#FFB938; --coral:#FF7A66; --violet:#A491FF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1220; --surface:#121D31; --ink:#E9EFF8; --muted:#9BAAC0; --line:#23324A; --soft:#182640;
+  --blue:#7DA0FF; --teal:#2DD4BF; --amber:#FFB938; --coral:#FF7A66; --violet:#A491FF;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.12;margin:0;letter-spacing:-0.02em}
+p{margin:0 0 1em}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:16px;background:var(--surface);color:var(--ink);padding:8px 12px;z-index:50}
+
+/* header (always navy) */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(10,23,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.08rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#4C7DFF,#2DD4BF);color:#07122A;font-size:.95rem}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav a{color:#B8C6DD;text-decoration:none;font-size:.95rem;font-weight:500;white-space:nowrap}
+nav a:hover{color:#fff}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#EAF0FB;padding:72px 0 80px;
+  background:radial-gradient(900px 420px at 85% -10%,rgba(76,125,255,.35),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(45,212,191,.18),transparent 60%),linear-gradient(135deg,var(--navy),var(--navy2))}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.2px);background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 85%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:500;padding:6px 14px;border-radius:999px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.4);color:#8EF0E1;margin-bottom:22px}
+.chip i{width:8px;height:8px;border-radius:50%;background:#2DD4BF}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem);font-weight:700;color:#fff}
+.role{font-family:var(--display);font-size:clamp(1.15rem,2.1vw,1.4rem);color:#8FB0FF;margin:14px 0 20px;font-weight:500}
+.lede{max-width:32em;color:#C9D5EA}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:10px;font-weight:600;font-size:.98rem;text-decoration:none;border:1.5px solid transparent;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn.primary{background:linear-gradient(135deg,#4C7DFF,#2F5BEA);color:#fff}
+.btn.ghost{color:#EAF0FB;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
+.btn.solid{background:var(--blue);color:#fff}
+.btn.line{color:var(--blue);border-color:var(--blue);background:transparent}
+
+/* dashboard tiles */
+.dash{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;backdrop-filter:blur(4px)}
+.tile.wide{grid-column:1/-1}
+.tile h3{font-family:var(--body);font-size:.88rem;font-weight:600;color:#DDE6F6;letter-spacing:0;margin-bottom:2px}
+.tile .cap{font-size:.8rem;color:#9FB1CE;margin:0 0 10px;line-height:1.45}
+.tile svg{width:100%;height:auto;display:block}
+.hbar{display:grid;grid-template-columns:96px 1fr 52px;align-items:center;gap:10px;margin:10px 0;font-size:.82rem;color:#C9D5EA}
+.hbar .track{height:12px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
+.hbar .val{font-family:var(--mono);font-size:.8rem;text-align:right;color:#fff}
+.ringwrap{display:flex;align-items:center;gap:14px}
+.ringwrap svg{width:104px;flex:none}
+.ringwrap p{margin:0;font-size:.8rem;color:#9FB1CE;line-height:1.45}
+
+/* shared viz transitions */
+.curve{stroke-dasharray:var(--len);stroke-dashoffset:0;transition:stroke-dashoffset 2.4s ease-out}
+.js .viz:not(.in) .curve{stroke-dashoffset:var(--len)}
+.pt{transition:opacity .4s}
+.js .viz:not(.in) .pt{opacity:0}
+.ring{stroke-dasharray:var(--circ);stroke-dashoffset:var(--off);transition:stroke-dashoffset 1.6s ease-out}
+.js .viz:not(.in) .ring{stroke-dashoffset:var(--circ)}
+.bar i{display:block;height:100%;border-radius:6px;transform-origin:left;transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.js .viz:not(.in) .bar i{transform:scaleX(0)}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* sections */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sec-head{max-width:42em;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.95rem,3.6vw,2.7rem)}
+.sec-head p{color:var(--muted);margin-top:12px}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 26px;align-self:start;border-top:4px solid var(--blue)}
+.facts dl{margin:0;display:grid;gap:16px}
+.facts dt{font-size:.85rem;color:var(--muted)}
+.facts dd{margin:0;font-weight:500}
+
+/* experience */
+.xp{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:32px}
+.xp-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+.xp-top h3{font-size:1.6rem}
+.meta{color:var(--muted);font-size:.95rem}
+.company{font-weight:600;color:var(--blue);margin:2px 0 18px}
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:28px 0 22px;position:relative}
+.pipe::before{content:"";position:absolute;left:12%;right:12%;top:24px;height:3px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--amber),var(--violet));border-radius:2px}
+.node{position:relative;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 6px;font:inherit;color:var(--muted);text-align:center}
+.node .dot{width:50px;height:50px;border-radius:50%;background:var(--surface);border:3px solid var(--c);display:grid;place-items:center;font-family:var(--mono);font-weight:500;color:var(--c);z-index:1;transition:background .2s,color .2s,transform .2s}
+.node .lbl{font-size:.9rem;font-weight:600;line-height:1.3}
+.node[aria-selected="true"] .dot{background:var(--c);color:#fff;transform:scale(1.08)}
+.node[aria-selected="true"] .lbl{color:var(--ink)}
+.n1{--c:var(--blue)}.n2{--c:var(--teal)}.n3{--c:var(--amber)}.n4{--c:var(--violet)}
+.panel{background:var(--soft);border-radius:12px;padding:26px 28px;border-left:5px solid var(--c)}
+.panel h4{font-size:1.25rem;margin-bottom:10px}
+.panel .how{color:var(--muted);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:.8rem;font-weight:500;padding:3px 11px;border-radius:999px;background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.panel[hidden]{display:none}
+
+/* projects */
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:34px;margin-bottom:28px;position:relative;overflow:hidden}
+.project::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--c)}
+.p1{--c:var(--blue)}.p2{--c:var(--teal)}
+.project h3{font-size:1.6rem;margin-bottom:6px}
+.project .sub{color:var(--muted);font-size:.95rem;margin-bottom:22px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.project h4{font-size:1.02rem;margin:0 0 8px}
+.project ul{margin:0 0 1em;padding-left:1.1em}
+.project li{margin-bottom:.5em}
+.res{width:100%;border-collapse:collapse;font-size:.95rem}
+.res th,.res td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.res th{font-size:.82rem;color:var(--muted);font-weight:500;border-bottom:2px solid var(--line)}
+.res td.n{font-family:var(--mono);font-size:.88rem;font-weight:500}
+.tablewrap{overflow-x:auto}
+.vizbox{background:var(--soft);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.vizbox h5{font-family:var(--body);font-size:.88rem;font-weight:600;margin:0 0 4px}
+.vizbox .cap{font-size:.84rem;color:var(--muted);margin:0 0 6px}
+.vbar{display:grid;grid-template-columns:130px 1fr 56px;align-items:center;gap:10px;margin:10px 0;font-size:.88rem}
+.vbar .track{height:14px;border-radius:7px;background:var(--surface);overflow:hidden}
+.vbar .val{font-family:var(--mono);font-size:.85rem;text-align:right;font-weight:500}
+.vring{display:flex;align-items:center;gap:18px}
+.vring svg{width:116px;flex:none}
+.vring p{margin:0;font-size:.92rem}
+.link{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+
+/* tools */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.fbtn{font:inherit;font-size:.92rem;font-weight:500;min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.fbtn i{width:10px;height:10px;border-radius:50%;background:var(--c,var(--ink))}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tool{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:20px 22px}
+.tool[hidden]{display:none}
+.cat-data{--c:var(--blue)}.cat-bi{--c:var(--amber)}.cat-ml{--c:var(--violet)}.cat-comms{--c:var(--teal)}
+.tool h4{font-size:1.1rem;margin-bottom:4px}
+.where{display:inline-block;font-size:.78rem;font-weight:500;color:var(--muted);background:var(--soft);padding:2px 10px;border-radius:999px;margin-bottom:10px}
+.tool p{margin:0;font-size:.97rem;color:var(--ink)}
+.sub-note{display:block;font-size:.82rem;color:var(--muted);font-weight:400;font-family:var(--body);letter-spacing:0;margin-top:2px}
+
+/* education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.edu article{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px}
+.edu h3{font-size:1.28rem;margin-bottom:4px}
+.edu .when{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.score{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.score b{font-family:var(--mono);font-size:1.7rem;font-weight:500}
+.score span{color:var(--muted);font-size:.9rem}
+.meter{height:12px;border-radius:6px;background:var(--soft);overflow:hidden;margin-bottom:18px}
+.status{display:inline-block;font-size:.84rem;font-weight:600;color:var(--teal);background:var(--soft);padding:3px 12px;border-radius:999px;margin-bottom:14px}
+
+/* contact */
+.contact{border-radius:18px;padding:48px;color:#EAF0FB;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;
+  background:radial-gradient(700px 300px at 100% 0%,rgba(76,125,255,.4),transparent 60%),linear-gradient(135deg,var(--navy),var(--navy2))}
+.contact h2{font-size:clamp(1.8rem,3.4vw,2.5rem);max-width:15em;color:#fff}
+.contact p{color:#C0CDE3;margin:12px 0 0;max-width:30em}
+footer{padding:28px 0 44px;color:var(--muted);font-size:.9rem}
+
+@media (max-width:900px){
+  .hero{padding:44px 0 56px}
+  .hero .wrap,.about,.cols,.edu{grid-template-columns:1fr}
+  .hero .wrap{gap:36px}
+  .grid{grid-template-columns:1fr 1fr}
+  section{padding:60px 0}
+  .xp,.project,.contact{padding:24px}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .pipe{grid-template-columns:1fr 1fr;row-gap:22px}
+  .pipe::before{display:none}
+  .dash{grid-template-columns:1fr}
+  .tile.wide{grid-column:auto}
+  .vbar{grid-template-columns:100px 1fr 52px}
+  .top .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-direction:column;align-items:flex-start;gap:6px}
+  nav{width:100%}
+  .wrap{padding:0 18px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>A</b>Aalap Sangviker</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="chip"><i></i>MSc results received. Graduating January 2027</span>
+      <h1>Aalap Sangviker</h1>
+      <p class="role">Data analyst, MSc Data Science and Statistical Learning</p>
+      <p class="lede">I turn raw, messy data into analysis that people can act on. I have a year of analyst experience with Accenture's Krutanic programme, and my MSc thesis tests exactly where physics-informed neural networks work and where they fail.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/aalap-sangvikar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="mailto:aalapsangvikar0@gmail.com">Email me</a>
+      </div>
+    </div>
+
+    <div class="dash viz" id="heroViz" aria-label="Three charts summarising my project results">
+      <div class="tile wide">
+        <h3>Thesis: damped harmonic oscillator</h3>
+        <p class="cap">Noisy observations around the underlying solution a PINN has to learn. Illustrative curve.</p>
+        <svg id="chart" viewBox="0 0 560 230" role="img" aria-label="A decaying wave with scattered observations around it"></svg>
+      </div>
+      <div class="tile">
+        <h3>Thesis: parameter recovery error</h3>
+        <p class="cap">SIR model, pre-peak data only. Lower is better.</p>
+        <div class="hbar bar"><span>Infection rate (β)</span><div class="track"><i style="width:10.03%;background:#2DD4BF"></i></div><span class="val">4.01%</span></div>
+        <div class="hbar bar"><span>Recovery rate (γ)</span><div class="track"><i style="width:83.75%;background:#FF7A66"></i></div><span class="val">33.50%</span></div>
+      </div>
+      <div class="tile">
+        <h3>Mammography prediction</h3>
+        <p class="cap">XGBoost, the best of the models I compared.</p>
+        <div class="ringwrap">
+          <svg viewBox="0 0 140 140" role="img" aria-label="Ring chart showing 97.64 percent accuracy">
+            <circle cx="70" cy="70" r="54" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/>
+            <circle class="ring" cx="70" cy="70" r="54" fill="none" stroke="#2DD4BF" stroke-width="14" stroke-linecap="round" transform="rotate(-90 70 70)" style="--circ:339.29;--off:8.0"/>
+            <text x="70" y="76" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="500" fill="#fff">97.64%</text>
+          </svg>
+          <p>Accuracy, ahead of ViT, NAS and Hierarchical CNN.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="sec-head"><h2>About me</h2></div>
+      <p>I'm a data analyst finishing an MSc in Data Science and Statistical Learning at the University of Limerick. My results are in and I graduate in January 2027. Before that I completed a B.Tech in Computer Science and Engineering in India and worked for about a year as a Data Analyst Intern at Krutanic Solutions, an Accenture programme.</p>
+      <p>My work sits between two habits: cleaning and analysing real business data with SQL, Python and BI tools, and testing machine-learning methods carefully enough to know when to trust them. I like writing down what a result means, not only what the number is.</p>
+      <p>I'm looking for data analyst and data science roles where I can keep doing both.</p>
+    </div>
+    <aside class="facts" aria-label="Quick facts">
+      <dl>
+        <div><dt>Based in</dt><dd>Limerick, Ireland</dd></div>
+        <div><dt>Status</dt><dd>MSc results received, graduating January 2027</dd></div>
+        <div><dt>Experience</dt><dd>Data Analyst Intern, Krutanic Solutions by Accenture, May 2024 to June 2025</dd></div>
+        <div><dt>Core stack</dt><dd>SQL, Python, R, Power BI, Tableau</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <p>One year as an analyst, working through the full path from raw data to a dashboard someone else can read. Select a stage to see what I did.</p>
+    </div>
+    <article class="xp">
+      <div class="xp-top">
+        <h3>Data Analyst Intern</h3>
+        <span class="meta">May 2024 to June 2025</span>
+      </div>
+      <div class="company">Krutanic Solutions by Accenture</div>
+      <p>Over about a year I worked through the stages of an analysis project end to end. I was responsible for getting data into a trustworthy state, finding what it said, and presenting it so stakeholders could use it.</p>
+
+      <div class="pipe" role="tablist" aria-label="Analysis workflow stages">
+        <button class="node n1" role="tab" id="t1" aria-controls="p1x" aria-selected="true"><span class="dot">1</span><span class="lbl">Clean and validate</span></button>
+        <button class="node n2" role="tab" id="t2" aria-controls="p2x" aria-selected="false" tabindex="-1"><span class="dot">2</span><span class="lbl">Analyse</span></button>
+        <button class="node n3" role="tab" id="t3" aria-controls="p3x" aria-selected="false" tabindex="-1"><span class="dot">3</span><span class="lbl">Visualise and report</span></button>
+        <button class="node n4" role="tab" id="t4" aria-controls="p4x" aria-selected="false" tabindex="-1"><span class="dot">4</span><span class="lbl">Support modelling</span></button>
+      </div>
+
+      <div class="panel n1" role="tabpanel" id="p1x" aria-labelledby="t1">
+        <h4>Data cleaning and validation</h4>
+        <p>I took raw data and made it reliable. That meant finding and fixing data-quality problems, making formats and values consistent, and transforming the data into a shape that could be analysed and reported on without surprises.</p>
+        <p class="how">Why it mattered: every later step, from dashboards to models, depends on the data being right first.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">Python (Pandas)</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="panel n2" role="tabpanel" id="p2x" aria-labelledby="t2" hidden>
+        <h4>Analysis for business decisions</h4>
+        <p>I analysed datasets to identify patterns, trends and insights that supported business analysis. I queried data with SQL, explored and summarised it in Python, and used Excel for quick checks and working views.</p>
+        <p class="how">Why it mattered: the goal was always an actionable finding that supports a decision, not a table of numbers.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="panel n3" role="tabpanel" id="p3x" aria-labelledby="t3" hidden>
+        <h4>Dashboards and reporting</h4>
+        <p>I built interactive dashboards and reports in Tableau, Power BI and Excel to communicate key trends. I designed them for stakeholders who were not analysts, so findings were easy to read and explore without needing the underlying data work explained.</p>
+        <p class="how">Why it mattered: an insight only has value once the people making the decision can see and understand it.</p>
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="panel n4" role="tabpanel" id="p4x" aria-labelledby="t4" hidden>
+        <h4>Predictive modelling and statistical analysis</h4>
+        <p>I supported the modelling work by preparing the data, exploring which variables were relevant, and interpreting the results to point toward potential business improvements.</p>
+        <p class="how">Why it mattered: this is where I first connected clean data preparation to statistical and machine-learning methods, which led into my MSc.</p>
+        <div class="tags"><span class="tag">Python (NumPy, Scikit-learn)</span><span class="tag">Statistical analysis</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p>Two projects that show how I test methods, measure results and explain them.</p>
+    </div>
+
+    <article class="project p1">
+      <h3>MSc thesis: exploring physics-informed neural networks</h3>
+      <p class="sub">University of Limerick, Department of Mathematics and Statistics. Built with PyTorch.</p>
+      <div class="cols">
+        <div>
+          <h4>What I investigated</h4>
+          <p>Physics-informed neural networks (PINNs) learn the solution of a differential equation by building the equation into the training loss. I studied their capabilities and limits on two ODE systems: the damped harmonic oscillator and the SIR epidemic model. For each I tested three settings: forward problems, no-data training, and inverse problems where the model has to recover unknown parameters.</p>
+          <h4>What I built</h4>
+          <ul>
+            <li>A sine activation on the first layer, which made no-data training possible for the oscillator.</li>
+            <li>A combination of modified initial conditions and warm-start pretraining to solve the SIR no-data case.</li>
+            <li>A data-MSE-floor diagnostic that exposed and corrected a systematic overfitting bias in earlier inverse-PINN implementations.</li>
+          </ul>
+          <a class="link" href="https://github.com/Aalapsangvikar/physics-informed-neuralnetworks-thesis" target="_blank" rel="noopener">View the code on GitHub</a>
+        </div>
+        <div>
+          <div class="vizbox viz">
+            <h5>Which parameter can the data reveal?</h5>
+            <p class="cap">Recovery error from pre-peak data only. Lower is better.</p>
+            <div class="vbar bar"><span>Infection rate (β)</span><div class="track"><i style="width:10.03%;background:var(--teal)"></i></div><span class="val">4.01%</span></div>
+            <div class="vbar bar"><span>Recovery rate (γ)</span><div class="track"><i style="width:83.75%;background:var(--coral)"></i></div><span class="val">33.50%</span></div>
+          </div>
+          <div class="tablewrap">
+          <table class="res">
+            <thead><tr><th scope="col">Finding</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>Oscillator physics residual loss with a first-layer sine activation</td><td class="n">Down by three orders of magnitude</td></tr>
+              <tr><td>Oscillator no-data training, full-domain MSE</td><td class="n">Below 1e-5</td></tr>
+              <tr><td>SIR no-data PINN, relative L2 error</td><td class="n">1.58e-4</td></tr>
+              <tr><td>Infection rate (β) recovery error</td><td class="n">4.01%</td></tr>
+              <tr><td>Recovery rate (γ) recovery error</td><td class="n">33.50%</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p style="margin-top:14px;color:var(--muted);font-size:.96rem">The key insight: from pre-peak data alone, the epidemic recovery rate is essentially unidentifiable, while the infection rate stays reliably recoverable.</p>
+        </div>
+      </div>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">Python</span><span class="tag">Neural networks</span><span class="tag">Differential equations</span><span class="tag">Inverse problems</span></div>
+    </article>
+
+    <article class="project p2">
+      <h3>Breast cancer prediction with XGBoost and explainable AI</h3>
+      <p class="sub">Hybrid machine-learning system for mammographic breast cancer detection.</p>
+      <div class="cols">
+        <div>
+          <h4>What I built</h4>
+          <p>A system that predicts breast cancer from mammograms and also shows why. I compared several model architectures, namely ViT, CNN, NAS and XGBoost, to capture both local and global image patterns, then chose the best performer.</p>
+          <p>For transparency, I applied Integrated Gradients and LIME so each prediction highlights the key image regions that drove it. I then wrapped the model in a Swagger UI REST API where a user can upload an image and get a prediction and an explanation back in real time.</p>
+        </div>
+        <div>
+          <div class="vizbox viz">
+            <h5>Prediction accuracy</h5>
+            <div class="vring">
+              <svg viewBox="0 0 140 140" role="img" aria-label="Ring chart showing 97.64 percent accuracy">
+                <circle cx="70" cy="70" r="54" fill="none" stroke="var(--surface)" stroke-width="14"/>
+                <circle class="ring" cx="70" cy="70" r="54" fill="none" stroke="var(--teal)" stroke-width="14" stroke-linecap="round" transform="rotate(-90 70 70)" style="--circ:339.29;--off:8.0"/>
+                <text x="70" y="76" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="500" fill="var(--ink)">97.64%</text>
+              </svg>
+              <p>XGBoost outperformed ViT, NAS and Hierarchical CNN on the same task.</p>
+            </div>
+          </div>
+          <div class="tablewrap">
+          <table class="res">
+            <thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>Accuracy with XGBoost</td><td class="n">97.64%</td></tr>
+              <tr><td>Compared against</td><td class="n">ViT, NAS, Hierarchical CNN</td></tr>
+              <tr><td>Explainability</td><td class="n">Integrated Gradients, LIME</td></tr>
+              <tr><td>Delivery</td><td class="n">Swagger UI REST API</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+      <div class="tags"><span class="tag">XGBoost</span><span class="tag">Integrated Gradients</span><span class="tag">LIME</span><span class="tag">REST API</span><span class="tag">Swagger UI</span><span class="tag">Python</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Tools and how I've used them</h2>
+      <p>Each tool, and where it came into my work. Filter by area.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter tools by area">
+      <button class="fbtn" aria-pressed="true" data-f="all">All tools</button>
+      <button class="fbtn" aria-pressed="false" data-f="data" style="--c:var(--blue)"><i></i>Data and querying</button>
+      <button class="fbtn" aria-pressed="false" data-f="bi" style="--c:var(--amber)"><i></i>Dashboards and visualisation</button>
+      <button class="fbtn" aria-pressed="false" data-f="ml" style="--c:var(--violet)"><i></i>Machine learning and statistics</button>
+      <button class="fbtn" aria-pressed="false" data-f="comms" style="--c:var(--teal)"><i></i>Communication</button>
+    </div>
+    <div class="grid" id="toolGrid">
+      <div class="tool cat-data" data-cat="data"><h4>SQL <span class="sub-note">MySQL, Microsoft SQL Server</span></h4><span class="where">Internship</span><p>My starting point for analysis. I queried datasets to find patterns and trends, and to check data quality before anything else was built on top of them.</p></div>
+      <div class="tool cat-data" data-cat="data"><h4>Python: Pandas and NumPy</h4><span class="where">Internship, MSc</span><p>Pandas for cleaning, validating and reshaping raw data into analysis-ready datasets and for exploring them. NumPy for the numerical work underneath.</p></div>
+      <div class="tool cat-data" data-cat="data"><h4>Python: Scikit-learn</h4><span class="where">Internship, MSc</span><p>Preparing features, exploring which variables mattered, and supporting statistical and predictive models, then interpreting the results.</p></div>
+      <div class="tool cat-data" data-cat="data"><h4>R</h4><span class="where">MSc coursework</span><p>Statistical analysis and visualisation alongside Python, used across statistical learning and data mining coursework.</p></div>
+      <div class="tool cat-data" data-cat="data"><h4>Excel</h4><span class="where">Internship</span><p>Quick analysis, working views of the data, and reports for stakeholders alongside SQL and Python.</p></div>
+
+      <div class="tool cat-bi" data-cat="bi"><h4>Power BI</h4><span class="where">Internship</span><p>Built interactive dashboards and reports that let stakeholders explore key trends without needing the underlying data work explained.</p></div>
+      <div class="tool cat-bi" data-cat="bi"><h4>Tableau</h4><span class="where">Internship</span><p>Built interactive dashboards and visual reports to present findings clearly to non-technical audiences.</p></div>
+      <div class="tool cat-bi" data-cat="bi"><h4>ggplot2</h4><span class="where">MSc coursework</span><p>Producing clear, publication-style statistical charts in R.</p></div>
+      <div class="tool cat-bi" data-cat="bi"><h4>Gephi</h4><span class="where">Coursework and projects</span><p>Visualising and exploring relationships in data as networks.</p></div>
+
+      <div class="tool cat-ml" data-cat="ml"><h4>Predictive analytics and statistical modelling</h4><span class="where">Internship, MSc</span><p>Supported predictive modelling at my internship, and studied statistical learning, experiment design and large-scale datasets in my MSc.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>PyTorch</h4><span class="where">MSc thesis</span><p>Implemented every PINN experiment in my thesis: forward, no-data and inverse problems for the oscillator and SIR models, including the sine activation and warm-start pretraining.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>TensorFlow and Keras</h4><span class="where">Projects and coursework</span><p>Building and training neural network models, including the deep-learning models I compared in my image-classification work.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>XGBoost</h4><span class="where">Breast cancer project</span><p>The final model for the mammography system, reaching 97.64% accuracy and outperforming ViT, NAS and Hierarchical CNN.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>Integrated Gradients and LIME</h4><span class="where">Breast cancer project</span><p>Explainable-AI methods that highlight which image regions drove each prediction, so results can be checked rather than taken on trust.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>NLP</h4><span class="where">MSc coursework</span><p>Working with text data and language-based models as part of my machine-learning studies.</p></div>
+      <div class="tool cat-ml" data-cat="ml"><h4>REST API with Swagger UI</h4><span class="where">Breast cancer project</span><p>Exposed the model as an API so a user can upload an image and get a prediction and explanation back in real time.</p></div>
+
+      <div class="tool cat-comms" data-cat="comms"><h4>Microsoft Word and PowerPoint</h4><span class="where">Internship, university</span><p>Writing up findings and presenting them clearly to stakeholders and academic audiences.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="edu">
+      <article class="viz">
+        <h3>MSc, Data Science and Statistical Learning</h3>
+        <div class="when">University of Limerick, Ireland. Graduating January 2027</div>
+        <span class="status">Results received</span>
+        <div class="score"><b>3.25</b><span>final QCA out of 4.00</span></div>
+        <div class="meter bar"><i style="width:81.25%;background:var(--blue)"></i></div>
+        <p>Coursework in statistical learning, machine learning and data mining, with hands-on work on large-scale datasets, predictive modelling and experiment design.</p>
+      </article>
+      <article class="viz">
+        <h3>B.Tech, Computer Science and Engineering</h3>
+        <div class="when">SRM Institute of Science &amp; Engineering, India. Completed May 2025</div>
+        <span class="status">Completed</span>
+        <div class="score"><b>9.45</b><span>CGPA out of 10</span></div>
+        <div class="meter bar"><i style="width:94.5%;background:var(--teal)"></i></div>
+        <p>A computer science foundation in programming, algorithms and systems, which I built on with a year of hands-on analyst experience.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Let's talk about a role</h2>
+        <p>I'm open to data analyst and data science opportunities. The quickest way to reach me is email or LinkedIn.</p>
+      </div>
+      <div class="actions" style="margin:0">
+        <a class="btn primary" href="mailto:aalapsangvikar0@gmail.com">aalapsangvikar0@gmail.com</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/aalap-sangvikar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/Aalapsangvikar/physics-informed-neuralnetworks-thesis" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Aalap Sangviker, Limerick, Ireland</div>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero oscillator chart */
+  var svg=document.getElementById('chart');
+  var NS='http://www.w3.org/2000/svg';
+  var W=560,H=230,L=34,R=10,T=10,B=26,tmax=14,pw=W-L-R,ph=H-T-B;
+  function X(t){return L+t/tmax*pw}
+  function Y(v){return T+ph/2-v*(ph/2-8)}
+  function f(t){return Math.exp(-0.2*t)*Math.cos(1.9*t)}
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a){e.setAttribute(k,a[k])}return e}
+  [-1,-0.5,0,0.5,1].forEach(function(v){
+    svg.appendChild(el('line',{x1:L,x2:W-R,y1:Y(v),y2:Y(v),stroke:v===0?'rgba(255,255,255,.35)':'rgba(255,255,255,.1)','stroke-width':v===0?1.5:1}));
+  });
+  var tx=el('text',{x:W-R,y:H-6,'text-anchor':'end','font-size':11,fill:'#9FB1CE','font-family':'IBM Plex Sans, sans-serif'});
+  tx.textContent='time';svg.appendChild(tx);
+  var ty=el('text',{x:L+4,y:T+10,'font-size':11,fill:'#9FB1CE','font-family':'IBM Plex Sans, sans-serif'});
+  ty.textContent='displacement';svg.appendChild(ty);
+  var d='';
+  for(var t=0;t<=tmax+0.001;t+=0.05){d+=(t===0?'M':'L')+X(t).toFixed(1)+' '+Y(f(t)).toFixed(1)+' '}
+  var path=el('path',{d:d,fill:'none',stroke:'#7DA0FF','stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round','class':'curve'});
+  svg.appendChild(path);
+  var len=2000;try{len=Math.ceil(path.getTotalLength())}catch(e){}
+  path.style.setProperty('--len',len);
+  svg.parentNode.parentNode.style.setProperty('--len',len);
+  for(var s=0.35;s<tmax;s+=0.6){
+    var nz=Math.sin(s*12.9898)*0.5+Math.sin(s*78.233)*0.5;
+    var v=f(s)+nz*0.09*Math.exp(-0.05*s)+nz*0.04;
+    var c=el('circle',{cx:X(s).toFixed(1),cy:Y(v).toFixed(1),r:4,fill:'#FFB938','class':'pt'});
+    c.style.transitionDelay=(0.3+s/tmax*2.2)+'s';
+    svg.appendChild(c);
+  }
+
+  /* reveal data viz */
+  var vizEls=[].slice.call(document.querySelectorAll('.viz'));
+  function show(e){e.classList.add('in')}
+  if(reduce||!('IntersectionObserver' in window)){vizEls.forEach(show)}
+  else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){show(en.target);io.unobserve(en.target)}});
+    },{threshold:.25});
+    vizEls.forEach(function(e){io.observe(e)});
+    setTimeout(function(){show(document.getElementById('heroViz'))},250);
+  }
+
+  /* experience tabs */
+  var tabs=[].slice.call(document.querySelectorAll('.pipe [role=tab]'));
+  var panels=[].slice.call(document.querySelectorAll('.xp [role=tabpanel]'));
+  function select(i){
+    tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i);t.tabIndex=k===i?0:-1});
+    panels.forEach(function(p,k){p.hidden=k!==i});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(i)});
+    t.addEventListener('keydown',function(e){
+      var n=i;
+      if(e.key==='ArrowRight')n=(i+1)%tabs.length;
+      else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;
+      else return;
+      e.preventDefault();select(n);tabs[n].focus();
+    });
+  });
+
+  /* tool filters */
+  var fb=[].slice.call(document.querySelectorAll('.fbtn'));
+  var cards=[].slice.call(document.querySelectorAll('#toolGrid .tool'));
+  fb.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-f');
+      fb.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      cards.forEach(function(c){c.hidden=!(f==='all'||c.getAttribute('data-cat')===f)});
+    });
+  });
+})();
+</script>
+</body>
+</html>
